@@ -9,6 +9,8 @@ ___
 * Play around with the ordering of tasks on each iteration
   * put() > compute > check > vs. compute > check > put() etc...
 * Look for opportunities to use a greedy approach
+* Try to while loop on !null if possible, this makes internal if/else much easier to manage
+  * return null at the end of algo to terminate the loop
 
 ## Int
 Max size of int is: `2,147,483,647` This is important to know when working with large numbers.
@@ -60,19 +62,19 @@ Use these algorithms for:
 
 ## Trees
 ### Binary Tree
-**In order traversal** - Remember left, node, right. 
+#### Search
+* Super easy algo, while loop on !null, if match return, use ternary for moving R or L
+#### In Order Traversal
+* left, node, right
 
-### Depth First
+#### Depth First
 * Recursive structure of DFS: Null case > dive operations > recurse > surface operations
 * Great for getting/comparing leaves - DFS + add the nodes with no children to a list.
 * Use DFS to determine the maximum depth
   * `counter++` while diving (before recursive calls), save if deeper than what has been seen already
   * `counter--` while surfacing (after recursive calls)
 
-#### Binary
-Dive the left with a recursive call, then dive right. 
-
-#### Non-Binary
+### Non-Binary
 Put the children in an array, then for each child, recursive call.
 
 

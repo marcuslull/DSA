@@ -1,3 +1,5 @@
+import utilities.BinaryTreeNode;
+
 public class BinarySearch {
 
     /**
@@ -39,6 +41,24 @@ public class BinarySearch {
         }
         // we have exited the loop without returning the answer so return -1 to signify not found.
         return -1;
+    }
+
+    /**
+     * Searches for a target value in a binary search tree.
+     *
+     * @param rootNode the root node of the binary search tree
+     * @param target the value to be searched for
+     * @return the node containing the target value if found, or null if not found
+     */
+    public static BinaryTreeNode binarySearchTree(BinaryTreeNode rootNode, int target) {
+        BinaryTreeNode current = rootNode;
+
+        // if we travel to a null child we know the val does not exist
+        while(current != null) {
+            if (target == current.value) return current; // found a match!
+            current = (target < current.value) ? current.leftChild : current.rightChild; // keep looking left or right
+        }
+        return null; // hit a leaf node with no match
     }
 
     public static void main(String[] args) {
