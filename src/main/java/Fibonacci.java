@@ -25,8 +25,34 @@ public class Fibonacci {
         return current;
     }
 
+    public static int tribonacci(int nthNumber) {
+        // Same formula as fib just introduce the prevPrev into the next equation
+        // Time: n
+        // Space: 1
+
+        // edge cases
+        if (nthNumber == 0) return nthNumber; // or could return 0
+        if (nthNumber <= 2) return 1;
+
+        // Memory technique for fib/trib:
+        // these vars up to and including the for loop i will be increasing fib numbers (0, 1, 1, 2, ...)
+        int prevPrev = 0;
+        int prev = 1;
+        int curr = 1;
+        for (int i = 2; i < nthNumber; i++) { // loop once per up to n
+            int next = prevPrev + prev + curr; // figure out next
+            prevPrev = prev; // then move the rest up one spot
+            prev = curr;
+            curr = next;
+        }
+        return curr; // our answer
+    }
+
     public static void main(String[] args) {
-        int result = fibonacci(1);
-        System.out.println(result);
+        int resultFib = fibonacci(10);
+        System.out.println(resultFib);
+
+        int resultTrib = tribonacci(25);
+        System.out.println(resultTrib);
     }
 }

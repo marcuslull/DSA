@@ -11,6 +11,9 @@ ___
 * Look for opportunities to use a greedy approach
 * Try to while loop on !null if possible, this makes internal if/else much easier to manage
   * return null at the end of algo to terminate the loop
+* `while()` for unknown number of loops, `for()` for known number of loops
+* Some array problems are best handled by iterating backwards 'like running total' type issues
+* Make decision trees to clearly illustrate repeated logic
 
 ## Int
 Max size of int is: `2,147,483,647` This is important to know when working with large numbers.
@@ -31,7 +34,7 @@ When comparing strings, sorting them can allow you to compare easier. `.toCharAr
 Java.Util.Arrays class has lots of useful methods that are all available in leetCode.
 * `List<T> Arrays.asList(T)`
 * `int Arrays.binarySearch(T[], target)`
-* `T[] Arrays.copyOf(T[], original[], length)`
+* `T[] Arrays.copyOf(original[], length)`
 * `Arrays.sort(T[])`
 * `...`
 
@@ -49,6 +52,7 @@ When initializing an array it initializes to all zeros
 
 ## Math
 Java.Lang.Math class has many useful methods that are highly optimized.
+* `Math.min(i, j)` or `Math.max(i, j)`
 * `Math.pow(num, exp)`
 * `Math.sqrt(num)`
 * `Math.cbrt(num)`
@@ -60,10 +64,16 @@ Use these algorithms for:
 * detecting loops in linked data structures
 * walking through arrays or linked data structures and comparing
 
+## Fibonacci
+* Fib is previous + current = next
+* Trib is previousPrevious + previous + current = next
+* The vars needed in each case up to and including the for loop `i` will initialize as the fib sequence (0, 1, 1, 2, ...)
+
 ## Trees
 ### Binary Tree
 #### Search
 * Super easy algo, while loop on !null, if match return, use ternary for moving R or L
+
 #### In Order Traversal
 * left, node, right
 
