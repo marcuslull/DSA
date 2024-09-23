@@ -14,6 +14,15 @@ ___
 * `while()` for unknown number of loops, `for()` for known number of loops
 * Some array problems are best handled by iterating backwards 'like running total' type issues
 * Make decision trees to clearly illustrate repeated logic
+* Look for dynamic programming options where you can more efficiently build upon previous results, leveraging patterns
+* Unmatched numbers can be found by cancelling the like numbers out. XOR `^` is great for this.
+
+## Bitwise
+* Binary has patterns try to use them when solving binary problems
+* Bitwise shift `n << 1` or `n >> 1` great for multiplying by two or dividing by 2 (integer division) faster the math operators
+* Bitwise XOR `n ^= m` can be used to create a running bitwise sum
+  * `n ^ n = 0`, `n ^ m = x` so like numbers equal zero, or cancel out.
+  * Kind of like adding then subtracting to find the unmatched number without having to know if this is the number to add or subtract
 
 ## Int
 Max size of int is: `2,147,483,647` This is important to know when working with large numbers.
