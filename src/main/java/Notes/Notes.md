@@ -16,6 +16,8 @@ ___
 * Make decision trees to clearly illustrate repeated logic
 * Look for dynamic programming options where you can more efficiently build upon previous results, leveraging patterns
 * Unmatched numbers can be found by cancelling the like numbers out. XOR `^` is great for this.
+* Handle easy wins or edge cases right off the bat
+* Modulo and integer division can be handy in so many places 
 
 ## Bitwise
 * Binary has patterns try to use them when solving binary problems
@@ -37,7 +39,9 @@ Java.lang.Character has some great methods for manipulation
 * `...`
 
 ## String
-When comparing strings, sorting them can allow you to compare easier. `.toCharArray()` will get a string to a char[] where it can be sorted with `Arrays.sort()`. Put it back in a string with `new String(char[])` then compare with `.equals()`
+* When comparing strings, sorting them can allow you to compare easier.
+* `.toCharArray()` will get a string to a char[] where it can be sorted with `Arrays.sort()`. Put it back in a string with `new String(char[])` then compare with `.equals()`
+* Learn `java.lang.String` - way too many useful methods there!
 
 ## Arrays
 Java.Util.Arrays class has lots of useful methods that are all available in leetCode.
