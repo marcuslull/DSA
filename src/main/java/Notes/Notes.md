@@ -18,6 +18,8 @@ ___
 * Unmatched numbers can be found by cancelling the like numbers out. XOR `^` is great for this.
 * Handle easy wins or edge cases right off the bat
 * Modulo and integer division can be handy in so many places 
+* When parsing arrays sometimes you can break them into a prefix array and a postfix array
+  * prefix being everything before the target index. postfix being everything after.
 
 ## Bitwise
 * Binary has patterns try to use them when solving binary problems
@@ -70,6 +72,11 @@ Java.Lang.Math class has many useful methods that are highly optimized.
 * `Math.sqrt(num)`
 * `Math.cbrt(num)`
 * `...`
+
+## Stream
+`java.util.stream.Stream` and `java.util.stream.Collectors` 
+Learn the processing methods of the Stream interface and the accumulators of the Collectors class
+
 
 ## Two Pointers / Sliding window
 Use these algorithms for:
