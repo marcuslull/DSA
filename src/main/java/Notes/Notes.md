@@ -20,6 +20,8 @@ ___
 * Modulo and integer division can be handy in so many places 
 * When parsing arrays sometimes you can break them into a prefix array and a postfix array
   * prefix being everything before the target index. postfix being everything after.
+* Another strategy can be filling buckets according to some conditional
+  * Great for finding increasing or decreasing numbers
 
 ## Bitwise
 * Binary has patterns try to use them when solving binary problems
@@ -29,7 +31,7 @@ ___
   * Kind of like adding then subtracting to find the unmatched number without having to know if this is the number to add or subtract
 
 ## Int
-Max size of int is: `2,147,483,647` This is important to know when working with large numbers.
+Max size of int is `Integer.MAX_VALUE` or `2,147,483,647` This is important to know when working with large numbers.
 Also, it can be used as a bounds constraint to optimize code. If you know you have to return an int, you can design the algo to only work with numbers smaller than the maximum.
 
 ## Character
@@ -53,8 +55,7 @@ Java.Util.Arrays class has lots of useful methods that are all available in leet
 * `Arrays.sort(T[])`
 * `...`
 
-When initializing an array it initializes to all zeros  
-`int[] newArray = new int[4] // = [0,0,0,0]`
+When initializing an array it initializes to all zeros - `int[] newArray = new int[4] // = [0,0,0,0]`
 
 ## Collections
 * Important data structures `ArrayList`, `Deque<>`, `Set<>`, `HashMap<>`
