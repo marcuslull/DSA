@@ -22,6 +22,7 @@ ___
   * prefix being everything before the target index. postfix being everything after.
 * Another strategy can be filling buckets according to some conditional
   * Great for finding increasing or decreasing numbers
+* Create BST from sorted arrays, taking the middle element, then recurse off the L and R subArrays
 
 ## Bitwise
 * Binary has patterns try to use them when solving binary problems

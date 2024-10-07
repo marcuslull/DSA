@@ -61,10 +61,49 @@ public class BinarySearch {
         return null; // hit a leaf node with no match
     }
 
+    /**
+     * Builds a binary search tree from a given sorted array.
+     *
+     * @param sortedArray the array to be used for building the binary search tree
+     * @return the root node of the constructed binary search tree
+     */
+    public static BinaryTreeNode binarySearchTreeBuilder(int[] sortedArray) {
+        // Recursive problem - find the middle of the array, that should be our best root option
+        // as everything left of mid is less and everything right is more.
+        // This is a repeatable action and so recursion may be a good option
+        // Time: n
+        // Space: logN
+        int length = sortedArray.length;
+        if (length == 0) return null; // easy win edge case
+        return builder(sortedArray, 0, length - 1); // recursive call to the builder
+    }
+
+    // Recursive helper builds the BST one node at a time using the middle value of the array
+    // startIndex and endIndex are this iterations slice of nums
+    private static BinaryTreeNode builder(int[] array, int startIndex, int endIndex){
+        if(startIndex > endIndex) // Base case, collapsing the stack
+            return null;
+        int middle = startIndex + (endIndex - startIndex) / 2; // proper way to find middle of a subarray
+        BinaryTreeNode node = new BinaryTreeNode(array[middle]); // our next node in the tree
+        node.leftChild = builder(array, startIndex, middle - 1); // recurse the left side
+        node.rightChild = builder(array, middle + 1, endIndex); // recurse the right side
+        return node; // returning the nodes from the end to the beginning as the stack collapses
+    }
+
+
+
+
+
+
     public static void main(String[] args) {
         int[] sortedArray = {2,10,12,17,29,31,42,59,69,75,84,99};
         int target = 2;
         int result = binarySearch(sortedArray, target);
         System.out.println(result);
+
+
+        BinaryTreeNode rootNode = binarySearchTreeBuilder(sortedArray);
+        System.out.println("Root value: " + rootNode.value + ", left value: " +
+                rootNode.leftChild.value + ", right value: " + rootNode.rightChild.value);
     }
 }
