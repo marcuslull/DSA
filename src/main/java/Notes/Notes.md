@@ -24,19 +24,33 @@ ___
   * Great for finding increasing or decreasing numbers
 * Create BST from sorted arrays, taking the middle element, then recurse off the L and R subArrays
 * When working with n dimension arrays, break the building of each dimension into its own helper method
+* Sometimes the quickest and smallest solution comes down to a clever "trick". You have to weigh time spent optimizing vs. time/space gains in the algorithm.
+* Sometimes it is worth it to use the more intuitive solution even if it is slightly slower or uses more space - be judicious with trading ease for physical resources!
+* When dealing with orders of magnitude, each orders multiplier is the base
+  * 10 for decimal, 26 for alphabetical, etc.
+  * AAA = iter 0: `result = [0]`, iter 1: `result = result * 26 + [1]`, iter 2: `result = result * 26 + [2]`
+* Look for builtin methods that accomplish the goal. These have been super-optimized
+* Use Floyd's loop detection (fast and slow pointers) to check for math repeating (infinite loops)
 
 ## Bitwise
 * Binary has patterns try to use them when solving binary problems
-* Bitwise shift `n << 1` or `n >> 1` great for multiplying by two or dividing by 2 (integer division) faster the math operators
+* Get familiar with the bitwise operations
+* Bitwise shift `n << 1` or `n >> 1` great for multiplying by two or dividing by 2 (integer division) faster the math operators or isolating bits
 * Bitwise XOR `n ^= m` can be used to create a running bitwise sum
   * `n ^ n = 0`, `n ^ m = x` so like numbers equal zero, or cancel out.
   * Kind of like adding then subtracting to find the unmatched number without having to know if this is the number to add or subtract
+* Since Java treats integers as binary under the hood you can work directly on ints
+  * `m |= (n & 1)` effectively copies the rightmost bit of `n` to `m`
+    * `(n & 1)` isolated the rightmost digit, `m |= (...)` preserves that bit to `n`
+  * `n &= (n - 1)` isolates the rightmost digit and removes it
+    * effective for counting the number of 1s
 
 ## Int
 Max size of int is `Integer.MAX_VALUE` or `2,147,483,647` This is important to know when working with large numbers.
 Also, it can be used as a bounds constraint to optimize code. If you know you have to return an int, you can design the algo to only work with numbers smaller than the maximum.
 
 ## Character
+Char are really just int behind the scenes and can be included in math equations `A = 65, B = 66`, etc.   
 Java.lang.Character has some great methods for manipulation
 * `Character.isDigit()`
 * `Character.isLetter()`
@@ -74,7 +88,9 @@ Java.Lang.Math class has many useful methods that are highly optimized.
 * `Math.pow(num, exp)`
 * `Math.sqrt(num)`
 * `Math.cbrt(num)`
-* `...`
+* `...`  
+
+Isolating digits can be done with `n % 10` and then discard them with `n / 10`
 
 ## Stream
 `java.util.stream.Stream` and `java.util.stream.Collectors` 
@@ -84,7 +100,7 @@ Learn the processing methods of the Stream interface and the accumulators of the
 ## Two Pointers / Sliding window
 Use these algorithms for:
 * finding the middle of linked data structures
-* detecting loops in linked data structures
+* Floyd's loop detection (fast and slow) for detecting loops in linked data structures or repeating in math equations
 * walking through arrays or linked data structures and comparing
 
 ## Fibonacci

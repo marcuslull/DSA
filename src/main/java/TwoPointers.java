@@ -32,16 +32,15 @@ public class TwoPointers {
      */
     public static void fastAndSlowFindLoop(LinkedList linkedList) {
         Node slowPointer = linkedList.head;
-        Node fastPointer = linkedList.head;
+        Node fastPointer = linkedList.head.next;
 
         while (fastPointer != null && fastPointer.next != null) {
-            slowPointer = slowPointer.next;
-            fastPointer = fastPointer.next.next;
-
             if (slowPointer == fastPointer) {
                 System.out.println("We have a loop in the linked list");
                 break;
             }
+            slowPointer = slowPointer.next;
+            fastPointer = fastPointer.next.next;
         }
     }
 
@@ -120,5 +119,8 @@ public class TwoPointers {
         int[] intArray = new int[] {7,1,5,3,6,4};
 //        int[] intArray = new int[] {7,6,4,3,1};
         slidingWindow(intArray);
+
+
+        Integer.reverse(123456789);
     }
 }
